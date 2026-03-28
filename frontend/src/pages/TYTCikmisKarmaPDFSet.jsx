@@ -8,7 +8,7 @@ import {
 } from 'react-icons/fa';
 
 // Gumroad ürün linkinizi buraya yapıştırın:
-const GUMROAD_URL = 'https://gumroad.com/l/LINKINIZI_BURAYA_YAZIN';
+const GUMROAD_URL = 'https://yclcngz.gumroad.com/l/pjsqnf';
 
 const STYLES = `
   @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');

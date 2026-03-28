@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useParams } from 'react-router-dom';
-import { FaWhatsapp, FaExclamationTriangle, FaFilePdf, FaCheckCircle } from 'react-icons/fa';
+import { FaWhatsapp, FaExclamationTriangle, FaFilePdf, FaCheckCircle, FaCreditCard } from 'react-icons/fa';
 import RainbowButton from '../components/RainbowButton';
 
 export default function ProductDetail() {
@@ -75,8 +75,13 @@ export default function ProductDetail() {
             <h1 className="text-4xl font-bold text-foreground mb-4">{product.title}</h1>
             <p className="text-xl text-muted-foreground mb-8 leading-relaxed">{product.description}</p>
             
-            <div className="text-4xl font-extrabold text-foreground mb-8 pb-8 border-b border-border">
-              {product.price.toFixed(2)} ₺
+            <div className="mb-8 pb-8 border-b border-border">
+              <div className="text-4xl font-extrabold text-foreground">{product.price.toFixed(2)} ₺</div>
+              {product.gumroadUrl && (
+                <div className="text-sm text-muted-foreground mt-2">
+                  Kredi kartı ödemesi USD olarak gerçekleşir (uluslararası kur üzerinden)
+                </div>
+              )}
             </div>
 
             <ul className="space-y-4 mb-10">
@@ -94,24 +99,37 @@ export default function ProductDetail() {
               <div>
                 <h4 className="text-destructive font-bold text-lg mb-1">ÖNEMLİ UYARI</h4>
                 <p className="text-destructive">
-                  Bu ürün fiziksel bir kitap değildir, PDF formatındadır. Kargo ile gönderim yapılmaz. 
-                  Satın alma işlemini tamamladıktan sonra PDF dosyası WhatsApp üzerinden size iletilecektir.
+                  Bu ürün fiziksel bir kitap değildir, PDF formatındadır. Kargo ile gönderim yapılmaz.
+                  Satın alma işlemini tamamladıktan sonra PDF dosyası size iletilecektir.
                 </p>
               </div>
             </div>
 
             {/* Call to Action */}
-            <RainbowButton 
-              as="a"
-              href={whatsappLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-auto w-full sm:w-auto shadow-lg shadow-green-500/20"
-              innerClassName="py-4 px-8 text-lg flex items-center justify-center gap-3 bg-zinc-950 text-white hover:bg-zinc-900 border-none"
-            >
-              <FaWhatsapp className="text-3xl text-[#25D366]" />
-              WhatsApp'tan Satın Al
-            </RainbowButton>
+            <div className="mt-auto flex flex-col sm:flex-row gap-3">
+              {product.gumroadUrl && (
+                <a
+                  href={product.gumroadUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-1 flex items-center justify-center gap-3 bg-primary text-primary-foreground font-bold text-lg py-4 px-8 rounded-2xl shadow-lg hover:opacity-90 transition-opacity"
+                >
+                  <FaCreditCard className="text-2xl" />
+                  Kredi Kartı ile Öde
+                </a>
+              )}
+              <RainbowButton
+                as="a"
+                href={whatsappLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={product.gumroadUrl ? 'flex-1' : 'flex-1 mt-0'}
+                innerClassName="py-4 px-8 text-lg flex items-center justify-center gap-3 bg-zinc-950 text-white hover:bg-zinc-900 border-none"
+              >
+                <FaWhatsapp className="text-3xl text-[#25D366]" />
+                WhatsApp'tan Satın Al
+              </RainbowButton>
+            </div>
           </div>
         </div>
       </div>

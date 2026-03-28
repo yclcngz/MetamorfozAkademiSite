@@ -7,6 +7,7 @@ const mockProducts = [
     title: 'AYT Matematik Soru Bankası PDF',
     description: 'ÖSYM çıkmış sorular ve özgün denemeler içeren dijital kitap.',
     price: 49.90,
+    gumroadUrl: null, // Gumroad'da ürün oluşturunca URL'yi buraya ekleyin
     imageUrl: 'https://images.unsplash.com/photo-1596495578065-6e0763fa1178?auto=format&fit=crop&q=80&w=800',
     category: 'Denemeler'
   },
@@ -15,6 +16,7 @@ const mockProducts = [
     title: 'TYT Fizik Konu Anlatımlı Soru Bankası PDF',
     description: 'Tüm TYT fizik konularını kapsayan görsel destekli akılda kalıcı notlar.',
     price: 39.90,
+    gumroadUrl: null, // Gumroad'da ürün oluşturunca URL'yi buraya ekleyin
     imageUrl: 'https://images.unsplash.com/photo-1636466497217-26a8cbeaf0aa?auto=format&fit=crop&q=80&w=800',
     category: 'Konu Anlatımları'
   },
@@ -23,6 +25,7 @@ const mockProducts = [
     title: 'ÖSYM Tipi Karma Matematik Denemeleri PDF',
     description: 'Yeni nesil sorularla hazırlanmış, tam sınav provalık 10 adet TYT ve AYT denemesi.',
     price: 59.90,
+    gumroadUrl: null, // Gumroad'da ürün oluşturunca URL'yi buraya ekleyin
     imageUrl: 'https://images.unsplash.com/photo-1610484826967-09c5720778c7?auto=format&fit=crop&q=80&w=800',
     category: 'Denemeler'
   }
