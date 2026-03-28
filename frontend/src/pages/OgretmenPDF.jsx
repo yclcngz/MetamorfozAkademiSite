@@ -198,6 +198,7 @@ export default function OgretmenPDF() {
       <style>{MODAL_STYLES}</style>
       <Helmet>
         <title>Öğretmen PDF — Metamorfoz Akademisi</title>
+        <meta name="description" content="Öğretmenlere özel hazır PDF materyalleri. LGS, TYT, AYT konularında sınıf içi kullanıma uygun çalışma kâğıtları ve kaynak setleri Metamorfoz Akademisi'nde." />
       </Helmet>
 
       {showModal && (

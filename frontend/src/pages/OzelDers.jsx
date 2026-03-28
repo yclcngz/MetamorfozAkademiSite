@@ -478,7 +478,10 @@ export default function OzelDers() {
   return (
     <>
       <style>{STYLES}</style>
-      <Helmet><title>Özel Ders Al — Metamorfoz Akademisi</title></Helmet>
+      <Helmet>
+        <title>Özel Ders Al — Metamorfoz Akademisi</title>
+        <meta name="description" content="Metamorfoz Akademisi ile LGS, TYT, AYT, DGS ve KPSS için birebir özel ders alın. Van, Ankara, İstanbul yüz yüze veya Türkiye geneli online ders imkânı." />
+      </Helmet>
 
       {/* ── Koyu Hero Bölümü ── */}
       <div className="oz-hero-section">

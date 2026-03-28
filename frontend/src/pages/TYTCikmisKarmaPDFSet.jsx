@@ -502,7 +502,10 @@ export default function TYTCikmisKarmaPDFSet() {
   return (
     <>
       <style>{STYLES}</style>
-      <Helmet><title>TYT Matematik Çıkmış Karma PDF Set — Metamorfoz Akademisi</title></Helmet>
+      <Helmet>
+        <title>TYT Matematik Çıkmış Karma PDF Set — Metamorfoz Akademisi</title>
+        <meta name="description" content="TYT Matematik çıkmış sorulardan derlenen karma PDF soru seti. Yılların sınav sorularını tek pakette çöz, TYT'ye güçlü hazırlan. Metamorfoz Akademisi." />
+      </Helmet>
 
       {/* ── Ödeme Yöntemi Modalı ── */}
       {showPayModal && (

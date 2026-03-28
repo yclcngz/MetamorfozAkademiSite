@@ -390,7 +390,10 @@ export default function OgrenciPDFKategori() {
   return (
     <>
       <style>{STYLES}</style>
-      <Helmet><title>{cat.label} PDF Kaynakları — Metamorfoz Akademisi</title></Helmet>
+      <Helmet>
+        <title>{cat.label} PDF Kaynakları — Metamorfoz Akademisi</title>
+        <meta name="description" content={`${cat.label} sınavına hazırlık için PDF kaynakları, deneme sınavları ve konu anlatımları. Metamorfoz Akademisi ile ${cat.label} hazırlığında bir adım öne geç.`} />
+      </Helmet>
 
       {toast && <div className="kp-toast">{toast}</div>}
 

@@ -502,7 +502,10 @@ export default function AYTCikmisKarmaPDFSet() {
   return (
     <>
       <style>{STYLES}</style>
-      <Helmet><title>AYT Matematik Çıkmış Karma PDF Set — Metamorfoz Akademisi</title></Helmet>
+      <Helmet>
+        <title>AYT Matematik Çıkmış Karma PDF Set — Metamorfoz Akademisi</title>
+        <meta name="description" content="AYT Matematik çıkmış sorulardan derlenen karma PDF soru seti. Yılların sınav sorularını tek pakette çöz, AYT'ye güçlü hazırlan. Metamorfoz Akademisi." />
+      </Helmet>
 
       {/* ── Ödeme Yöntemi Modalı ── */}
       {showPayModal && (

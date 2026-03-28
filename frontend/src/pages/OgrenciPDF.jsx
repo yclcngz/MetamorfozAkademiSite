@@ -184,7 +184,10 @@ export default function OgrenciPDF() {
   return (
     <>
       <style>{STYLES}</style>
-      <Helmet><title>Öğrenci PDF Kaynakları — Metamorfoz Akademisi</title></Helmet>
+      <Helmet>
+        <title>Öğrenci PDF Kaynakları — Metamorfoz Akademisi</title>
+        <meta name="description" content="LGS, TYT, AYT, DGS, KPSS ve 9-12. sınıf öğrencilerine özel PDF kaynakları. Deneme sınavları, konu anlatımı ve soru bankaları Metamorfoz Akademisi'nde." />
+      </Helmet>
 
       {/* ── Koyu Hero Bölümü ── */}
       <div className="op-hero-section">
