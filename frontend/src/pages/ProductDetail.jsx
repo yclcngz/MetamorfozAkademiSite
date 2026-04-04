@@ -76,10 +76,10 @@ export default function ProductDetail() {
             <p className="text-xl text-muted-foreground mb-8 leading-relaxed">{product.description}</p>
             
             <div className="mb-8 pb-8 border-b border-border">
-              <div className="text-4xl font-extrabold text-foreground">{product.price.toFixed(2)} ₺</div>
-              {product.gumroadUrl && (
+              <div className="text-4xl font-extrabold text-foreground">{product.price.toFixed(2)} ₺ <span className="text-sm text-muted-foreground">(PDF Fiyatı)</span></div>
+              {(product.shopierDigitalUrl || product.shopierPhysicalUrl) && (
                 <div className="text-sm text-muted-foreground mt-2">
-                  Kredi kartı ödemesi USD olarak gerçekleşir (uluslararası kur üzerinden)
+                  Kredi kartı ödemesi <span className="font-bold">Shopier</span> güvencesiyle 3D Secure olarak gerçekleşir.
                 </div>
               )}
             </div>
@@ -106,28 +106,41 @@ export default function ProductDetail() {
             </div>
 
             {/* Call to Action */}
-            <div className="mt-auto flex flex-col sm:flex-row gap-3">
-              {product.gumroadUrl && (
-                <a
-                  href={product.gumroadUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex-1 flex items-center justify-center gap-3 bg-primary text-primary-foreground font-bold text-lg py-4 px-8 rounded-2xl shadow-lg hover:opacity-90 transition-opacity"
-                >
-                  <FaCreditCard className="text-2xl" />
-                  Kredi Kartı ile Öde
-                </a>
-              )}
+            <div className="mt-auto flex flex-col gap-3">
+              <div className="flex flex-col sm:flex-row gap-3">
+                {product.shopierDigitalUrl && (
+                  <a
+                    href={product.shopierDigitalUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-1 flex items-center justify-center gap-2 bg-primary text-primary-foreground font-bold text-lg py-4 px-6 rounded-2xl shadow-lg hover:opacity-90 transition-opacity"
+                  >
+                    <FaFilePdf className="text-xl" />
+                    PDF Olarak Al
+                  </a>
+                )}
+                {product.shopierPhysicalUrl && (
+                  <a
+                    href={product.shopierPhysicalUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-1 flex items-center justify-center gap-2 bg-zinc-800 text-white font-bold text-lg py-4 px-6 rounded-2xl shadow-lg hover:bg-zinc-700 transition-colors border border-zinc-700"
+                  >
+                    <FaCreditCard className="text-xl" />
+                    Basılı Kitap Olarak Al
+                  </a>
+                )}
+              </div>
               <RainbowButton
                 as="a"
                 href={whatsappLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={product.gumroadUrl ? 'flex-1' : 'flex-1 mt-0'}
+                className="w-full mt-2"
                 innerClassName="py-4 px-8 text-lg flex items-center justify-center gap-3 bg-zinc-950 text-white hover:bg-zinc-900 border-none"
               >
                 <FaWhatsapp className="text-3xl text-[#25D366]" />
-                WhatsApp'tan Satın Al
+                WhatsApp'tan Destek veya Havale/EFT
               </RainbowButton>
             </div>
           </div>

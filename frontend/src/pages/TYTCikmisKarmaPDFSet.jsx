@@ -4,11 +4,12 @@ import { Link } from 'react-router-dom';
 import {
   FaChevronLeft, FaDownload, FaShoppingCart,
   FaCheck, FaWhatsapp,
-  FaCreditCard, FaUniversity, FaTimes,
+  FaCreditCard, FaUniversity, FaTimes, FaFilePdf, FaBox
 } from 'react-icons/fa';
 
-// Gumroad ürün linkinizi buraya yapıştırın:
-const GUMROAD_URL = 'https://yclcngz.gumroad.com/l/pjsqnf';
+// TODO: Shopier panelinden aldığınız ürün satın alma linklerini buraya yapıştırın:
+const SHOPIER_DIGITAL_URL = 'https://www.shopier.com/metamorfozakademi/45858220'; // PDF ürün linki
+const SHOPIER_PHYSICAL_URL = 'https://www.shopier.com/...'; // Basılı kitap ürün linki
 
 const STYLES = `
   @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
@@ -494,9 +495,14 @@ export default function TYTCikmisKarmaPDFSet() {
     window.open(`https://wa.me/905333785730?text=${msg}`, '_blank');
   };
 
-  const handleKartOdeme = () => {
+  const handleDigitalOdeme = () => {
     setShowPayModal(false);
-    window.open(GUMROAD_URL, '_blank');
+    window.open(SHOPIER_DIGITAL_URL, '_blank');
+  };
+
+  const handlePhysicalOdeme = () => {
+    setShowPayModal(false);
+    window.open(SHOPIER_PHYSICAL_URL, '_blank');
   };
 
   return (
@@ -519,11 +525,19 @@ export default function TYTCikmisKarmaPDFSet() {
               TYT Matematik Çıkmış Karma 7'li Set için nasıl ödeme yapmak istersiniz?
             </div>
             <div className="pay-options">
-              <button className="pay-option card" onClick={handleKartOdeme}>
-                <div className="pay-icon card"><FaCreditCard /></div>
+              <button className="pay-option card" onClick={handleDigitalOdeme}>
+                <div className="pay-icon card"><FaFilePdf /></div>
                 <div className="pay-option-body">
-                  <div className="pay-option-title">Kredi / Banka Kartı</div>
-                  <div className="pay-option-desc">Gumroad güvencesiyle anlık ödeme — PDF otomatik teslim edilir</div>
+                  <div className="pay-option-title">PDF Olarak Satın Al</div>
+                  <div className="pay-option-desc">Shopier ile anında öde — PDF anında hesabına/mailine gelsin</div>
+                </div>
+                <span className="pay-option-arrow">›</span>
+              </button>
+              <button className="pay-option card" style={{ borderColor: 'rgba(236,72,153,0.35)', background: 'rgba(236,72,153,0.06)' }} onClick={handlePhysicalOdeme}>
+                <div className="pay-icon card" style={{ color: '#ec4899', background: 'rgba(236,72,153,0.15)' }}><FaBox /></div>
+                <div className="pay-option-body">
+                  <div className="pay-option-title">Basılı Kitap Olarak Al</div>
+                  <div className="pay-option-desc">Shopier güvencesiyle öde — Kitap adresine kargolansın</div>
                 </div>
                 <span className="pay-option-arrow">›</span>
               </button>
@@ -531,7 +545,7 @@ export default function TYTCikmisKarmaPDFSet() {
                 <div className="pay-icon havale"><FaUniversity /></div>
                 <div className="pay-option-body">
                   <div className="pay-option-title">Havale / EFT</div>
-                  <div className="pay-option-desc">WhatsApp üzerinden IBAN bilgisini alarak havale ile öde</div>
+                  <div className="pay-option-desc">WhatsApp ile doğrudan bize ulaş, IBAN'a havale yap</div>
                 </div>
                 <span className="pay-option-arrow">›</span>
               </button>
@@ -565,10 +579,10 @@ export default function TYTCikmisKarmaPDFSet() {
             </div>
             <div className="cpdf-banner-actions">
               <div className="cpdf-price-badge">
-                <span className="cpdf-price-discount">🔥 -%25</span>
-                <span className="cpdf-price-old">₺199,9</span>
+                <span className="cpdf-price-discount">🔥 -%50</span>
+                <span className="cpdf-price-old">₺199,90</span>
                 <span className="cpdf-price-badge-label">Set Fiyatı</span>
-                <span className="cpdf-price-badge-val">₺149,99</span>
+                <span className="cpdf-price-badge-val">₺100,00</span>
               </div>
               <a
                 href="/2026-TYT-Mat-Deneme-1.pdf"
@@ -654,16 +668,16 @@ export default function TYTCikmisKarmaPDFSet() {
               <div className="cpdf-cta-card">
                 <div className="cpdf-cta-title">Tüm Seti Satın Al</div>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.4rem' }}>
-                  <span className="cpdf-cta-price-discount">🔥 -%25 İndirim</span>
-                  <span className="cpdf-cta-price-old">₺199,9</span>
+                  <span className="cpdf-cta-price-discount">🔥 -%50 İndirim</span>
+                  <span className="cpdf-cta-price-old">₺199,90</span>
                 </div>
                 <div className="cpdf-cta-price-row">
                   <span className="cpdf-cta-price-currency">₺</span>
-                  <span className="cpdf-cta-price-amount">149,99</span>
+                  <span className="cpdf-cta-price-amount">100,00</span>
                   <span className="cpdf-cta-price-note">7 deneme<br />280 soru</span>
                 </div>
                 <div className="cpdf-cta-sub">
-                  Kredi kartı (Gumroad) veya havale/EFT ile güvenle satın alabilirsin.
+                  Kredi kartı (Shopier güvencesi) veya havale/EFT ile güvenle satın alabilirsin.
                 </div>
                 <button className="cpdf-cta-btn-full" onClick={() => setShowPayModal(true)}>
                   <FaShoppingCart />
@@ -674,7 +688,7 @@ export default function TYTCikmisKarmaPDFSet() {
                   WhatsApp ile Bilgi Al
                 </button>
                 <div className="cpdf-fine">
-                  Kredi kartı (Gumroad) veya havale/EFT seçenekleri mevcuttur.
+                  Kredi kartı (Shopier) veya havale/EFT seçenekleri mevcuttur.
                 </div>
               </div>
             </div>
