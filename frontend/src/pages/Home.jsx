@@ -599,10 +599,10 @@ export default function Home() {
             {/* TYT Duyuru */}
             <div className="announce-card">
               <div className="price-tag">
-                <span className="price-tag-discount">🔥 -%25</span>
-                <span className="price-tag-old">₺199,9</span>
+                <span className="price-tag-discount">🔥 -%50</span>
+                <span className="price-tag-old">₺199,90</span>
                 <span className="price-tag-value tyt">
-                  <span className="price-tag-currency" style={{ WebkitTextFillColor: '#60a5fa' }}>₺</span>149<span style={{ fontSize: '0.9rem' }}>,99</span>
+                  <span className="price-tag-currency" style={{ WebkitTextFillColor: '#60a5fa' }}>₺</span>100<span style={{ fontSize: '0.9rem' }}>,00</span>
                 </span>
               </div>
               <div className="announce-badge">
@@ -634,10 +634,10 @@ export default function Home() {
               background: 'linear-gradient(135deg, rgba(245,158,11,0.14) 0%, rgba(217,119,6,0.08) 60%, rgba(120,53,15,0.05) 100%)',
             }}>
               <div className="price-tag">
-                <span className="price-tag-discount">🔥 -%25</span>
-                <span className="price-tag-old">₺199,9</span>
+                <span className="price-tag-discount">🔥 -%50</span>
+                <span className="price-tag-old">₺199,90</span>
                 <span className="price-tag-value ayt">
-                  <span className="price-tag-currency" style={{ WebkitTextFillColor: '#34d399' }}>₺</span>149<span style={{ fontSize: '0.9rem' }}>,99</span>
+                  <span className="price-tag-currency" style={{ WebkitTextFillColor: '#34d399' }}>₺</span>100<span style={{ fontSize: '0.9rem' }}>,00</span>
                 </span>
               </div>
               <div className="announce-badge" style={{
